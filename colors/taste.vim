@@ -344,7 +344,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
 
 
     let s:red   = <SID>blend(colors['strawberry'], colorsLighter['strawberry'], 100)
-    let s:red2 = <SID>blend(colors['strawberry'], colorsLighter['strawberry'], 100) " red 2
+    let s:red2 = <SID>blend(colors['strawberry'], colorsLighter['strawberry'], 0) " red 2
 
     let s:orange   = <SID>blend(colorsDarker['orange'], colors['orange'], 100) " orange 1
     let s:orange2 = <SID>blend(colorsDarker['orange'], colorsLighter['orange'], 100) " orange 2
@@ -419,7 +419,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
 
 
     let s:red   = <SID>blend(colorsDarkerer['strawberry'], colorsDarker['strawberry'], 100)
-    let s:red2 = <SID>blend(colorsDarkerer['strawberry'], colorsDarker['strawberry'], 100) " red 2
+    let s:red2 = <SID>blend(colorsDarker['strawberry'], colors['strawberry'], 100) " red 2
 
     let s:orange   = <SID>blend(colorsDarkerer['banana'], colorsDarker['banana'], 0) " orange 1
     let s:orange2 = <SID>blend(colorsDarkerer['banana'], colorsDarker['banana'], 0) " orange 2
@@ -553,7 +553,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   call <sid>X('Keyword',        s:red,         '',          '')
   call <sid>X('Exception',      s:purple,         '',          '')
   call <sid>X('PreProc',        s:orange2,       '',          '')
-  call <sid>X('Include',        s:blue,         '',          '')
+  call <sid>X('Include',        s:cyan,         '',          '')
   call <sid>X('Define',         s:purple,         '',          'none')
   call <sid>X('Macro',          s:purple,         '',          '')
   call <sid>X('PreCondit',      s:orange2,       '',          '')

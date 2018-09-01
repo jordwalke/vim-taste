@@ -404,7 +404,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
     " Search color should not resemble other colors in colorschemes.
     let s:search2   = colors['banana']
     let s:search  = colorsLighter['banana']
-    let s:search_bg  = s:syntax_bg
+    let s:search2_bg  = <SID>blend(s:syntax_bg, s:search2, 15)
+    let s:search_bg  = <SID>blend(s:syntax_bg, s:search, 5)
 
   else
     let colorsLighter = s:colorsFor(g:taste_light_brightness + 1)
@@ -480,6 +481,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
     let s:search2   = colorsDarker['banana']
     let s:search  = colors['banana']
     let s:search_bg  = s:syntax_fg
+    let s:search2_bg  = <SID>blend(s:syntax_fg, s:search2, 15)
+    let s:search_bg  = <SID>blend(s:syntax_fg, s:search, 5)
 
   endif
 
@@ -500,7 +503,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   call <sid>X('vertsplit',    s:vertsplit_bg,     s:gutter_bg,               'none')
   call <sid>X('Folded',       s:syntax_bg,     s:syntax_fold_bg, 'none')
   call <sid>X('FoldColumn',   s:fg_dim,        s:chrome_bg,  '')
-  call <sid>X('IncSearch',    s:search_bg,     s:search2,        'none')
+  call <sid>X('IncSearch',    s:search_bg,     s:search,        'none')
   call <sid>X('LineNr',       s:gutter_fg,     s:gutter_bg,  '')
   call <sid>X('CursorLineNr', s:syntax_fg,     s:gutter_bg,  'none')
   call <sid>X('MatchParen',   s:syntax_bg,     s:red,          '')
@@ -516,7 +519,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   call <sid>X('PMenuSbar',    '',              s:modal_bg,      '')
   call <sid>X('PMenuThumb',   '',              s:modal_button_bg,         '')
   call <sid>X('Question',     s:blue,         '',               '')
-  call <sid>X('Search',       s:search_bg,     s:search,        '')
+  call <sid>X('Search',       s:search2_bg,     s:search2,        '')
   call <sid>X('SpecialKey',   s:special_grey,  '',               '')
   call <sid>X('StatusLine',   s:syntax_fg,     s:chrome_bg,  'none')
   " Remove the ugly grey nub (first param has to be chrome_bg - same as vertsplit_bg)

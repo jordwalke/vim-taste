@@ -316,7 +316,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
       let l:decoration = " gui=" . l:attrArg . " cterm=" . l:attrArg
     endif
 
-    if g:hasGuiRunning && a:0 >= 5 && a:5 != ''
+    if a:0 >= 5 && a:5 != ''
       let l:guispArg = a:5
       let l:guisp = " guisp=#" . l:guispArg
     endif
@@ -823,17 +823,19 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   " }}}
 
   " Spelling highlighting ---------------------------------------------------{{{
-  if g:hasGuiRunning
-    call <sid>X('SpellBad',     '', s:syntax_bg, 'undercurl', s:red)
-    call <sid>X('SpellLocal',   '', s:syntax_bg, 'undercurl')
-    call <sid>X('SpellCap',     '', s:syntax_bg, 'undercurl', s:orange)
-    call <sid>X('SpellRare',    '', s:syntax_bg, 'undercurl')
-  else
-    call <sid>X('SpellBad',     '', s:syntax_bg, 'underline')
-    call <sid>X('SpellLocal',   '', s:syntax_bg, 'underline')
-    call <sid>X('SpellCap',     '', s:syntax_bg, 'underline')
-    call <sid>X('SpellRare',    '', s:syntax_bg, 'underline')
-  endif
+  " Even if no gui_running, Kitty (and VTE) will render undercurls if you set:
+  " 
+  "   let &t_Cs = "\e[4:3m\e[58;5;9m"
+  "   let &t_Ce = "\e[4:0m\e[59m"
+  "
+  " But note that the ;9m sets it to the terminal red color.
+  " Instead we should read from the actual colors to set the terminal colors
+  " according to the color scheme. Coming soon: A plugin in VimBox that sets
+  " that escape code upon every colorscheme change.
+  call <sid>X('SpellBad',     '', s:syntax_bg, 'undercurl', s:red)
+  call <sid>X('SpellLocal',   '', s:syntax_bg, 'undercurl')
+  call <sid>X('SpellCap',     '', s:syntax_bg, 'undercurl', s:orange)
+  call <sid>X('SpellRare',    '', s:syntax_bg, 'undercurl')
   " }}}
 
   " Vim highlighting --------------------------------------------------------{{{

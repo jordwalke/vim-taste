@@ -524,6 +524,8 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   call <sid>X('StatusLine',   s:syntax_fg,     s:chrome_bg,  'none')
   " Remove the ugly grey nub (first param has to be chrome_bg - same as vertsplit_bg)
   call <sid>X('StatusLineNC', s:chrome_bg,     s:chrome_fg_dim,               '')
+  call <sid>X('StatusLineTerm',   s:syntax_fg,     s:chrome_bg,  'none')
+  call <sid>X('StatusLineTermNC', s:chrome_bg,     s:chrome_fg_dim,               'reverse')
   call <sid>X('TabLine',      s:fg,        s:chrome_bg,      'none')
   call <sid>X('TabLineFill',  s:chrome_fg_dim, s:chrome_bg,  'none')
   call <sid>X('TabLineSel',   s:blue,         s:syntax_bg,          '')

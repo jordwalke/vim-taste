@@ -382,10 +382,10 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
     " modal_bg is things like popup menus, visual selection - things
     " generally overlayed on top of the background color that might bump up
     " against chrome as well.
-    let s:modal_bg  = <SID>blend(colorsDarker['black'], colorsLighter['black'], 30)
+    let s:modal_bg  = <SID>blend(colorsDarker['black'], colors['black'], 68)
     " modal_button_bg is things like popup menu scrollbar thumbs, wildmenu
     " cursor that may appear on top of modal_bg.
-    let s:modal_button_bg  = <SID>blend(colorsDarker['black'], colorsLighter['black'], 60)
+    let s:modal_button_bg  = <SID>blend(colors['black'], colorsLighter['black'], 10)
     let s:syntax_cursor =  s:modal_bg
 
     let s:syntax_accent = colorsLighter['blueberry']
@@ -769,7 +769,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   " Rules also include free floating rules like - - - - and * * * * *
   call <sid>X('markdownRule',             s:fg_dim,  '', '')
   
-  call <sid>X('markdownBlockquote',       s:fg_dim,  s:fg_dim, '')
+  call <sid>X('markdownBlockquote',       s:syntax_cursor, s:syntax_cursor , '')
   call <sid>X('markdownBlock',       s:fg_dim,  s:fg_dim, 'italic')
   call <sid>X('markdownBold',             s:orange,   '', 'bold')
   call <sid>X('markdownBoldItalic',       s:orange,   '', 'bold,italic')

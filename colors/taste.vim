@@ -769,7 +769,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   " Rules also include free floating rules like - - - - and * * * * *
   call <sid>X('markdownRule',             s:fg_dim,  '', '')
   
-  call <sid>X('markdownBlockquote',       s:blue,  s:blue, '')
+  call <sid>X('markdownBlockquote',       s:fg_dim,  s:fg_dim, '')
   call <sid>X('markdownBlock',       s:fg_dim,  s:fg_dim, 'italic')
   call <sid>X('markdownBold',             s:orange,   '', 'bold')
   call <sid>X('markdownBoldItalic',       s:orange,   '', 'bold,italic')

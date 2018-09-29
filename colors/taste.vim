@@ -491,7 +491,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
   " Vim editor color --------------------------------------------------------{{{
   call <sid>X('bold',         '',              '',               'bold')
   call <sid>X('ColorColumn',  '',              s:syntax_cursor,  '')
-  call <sid>X('Conceal',      '',              '',               '')
+  call <sid>X('Conceal',      '',              s:syntax_bg,               '')
   call <sid>X('Cursor',       s:syntax_bg,     s:blue,          '')
   call <sid>X('CursorIM',     '',              '',               '')
   call <sid>X('CursorColumn', '',              s:syntax_cursor,  '')
@@ -764,20 +764,28 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256 || &t_Co == 16777216
 
   " Markdown highlighting ---------------------------------------------------{{{
   call <sid>X('markdownUrl',              s:fg_dim,  '', '')
+  " Heading rules are the ==== and --- below a heading
+  call <sid>X('markdownHeadingRule',      s:fg_dim,  '', '')
+  " Rules also include free floating rules like - - - - and * * * * *
+  call <sid>X('markdownRule',             s:fg_dim,  '', '')
+  
+  call <sid>X('markdownBlockquote',       s:blue,  s:blue, '')
+  call <sid>X('markdownBlock',       s:fg_dim,  s:fg_dim, 'italic')
   call <sid>X('markdownBold',             s:orange,   '', 'bold')
-  call <sid>X('markdownItalic',           s:orange,   '', 'bold')
+  call <sid>X('markdownBoldItalic',       s:orange,   '', 'bold,italic')
+  call <sid>X('markdownItalic',           s:orange,   '', 'italic')
   call <sid>X('markdownCode',             s:green,   '', '')
   call <sid>X('markdownCodeBlock',        s:red,   '', '')
-  call <sid>X('markdownCodeDelimiter',    s:green,   '', '')
-  call <sid>X('markdownHeadingDelimiter', s:red2, '', '')
-  call <sid>X('markdownH1',               s:red,   '', '')
-  call <sid>X('markdownH2',               s:red,   '', '')
-  call <sid>X('markdownH3',               s:red,   '', '')
-  call <sid>X('markdownH3',               s:red,   '', '')
+  call <sid>X('markdownCodeDelimiter',    s:fg_dim,   '', '')
+  call <sid>X('markdownHeadingDelimiter', s:red, '', '')
+  call <sid>X('markdownH1',               s:red,   '', 'bold')
+  call <sid>X('markdownH2',               s:red,   '', 'bold')
+  call <sid>X('markdownH3',               s:red,   '', 'bold')
+  call <sid>X('markdownH3',               s:red,   '', 'bold')
   call <sid>X('markdownH4',               s:red,   '', '')
   call <sid>X('markdownH5',               s:red,   '', '')
   call <sid>X('markdownH6',               s:red,   '', '')
-  call <sid>X('markdownListMarker',       s:red,   '', '')
+  call <sid>X('markdownListMarker',       s:red,   '', 'bold')
   " }}}
 
   " PHP highlighting --------------------------------------------------------{{{

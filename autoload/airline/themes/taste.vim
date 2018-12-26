@@ -42,8 +42,6 @@ fun! <SID>grey_number(x)
   endif
 endfun
 
-echomsg "IN TASTE THEM"
-
 " returns the actual grey level represented by the grey index
 fun! <SID>grey_level(n)
   if &t_Co == 88

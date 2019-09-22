@@ -4,9 +4,9 @@
 > Light and dark vim colorscheme, based on [elementary OS Brand](https://elementary.io/brand) colors.
 
 <img src="screenshots/logo-mac.png" width="744px" height="642px" />
-<img src="screenshots/dark.png" width="744px" height="642px" />
+<img src="screenshots/dark-example.png" width="744px" height="642px" />
 <img src="screenshots/logo-light-mac.png" width="744px" height="642px" />
-<img src="screenshots/light.png" width="744px" height="642px" />
+<img src="screenshots/light-example.png" width="744px" height="642px" />
 
 Supports *true colors* and falls back gracefully and automatically if your
 environment does not support this feature.
@@ -107,8 +107,8 @@ I've tested the following setup on a Mac:
 [logo-mac]: screenshots/logo-mac.png
 [logo-light]: screenshots/logo-light.png
 [logo-light-mac]: screenshots/logo-light-mac.png
-[screenshot-dark]: screenshots/dark.png
-[screenshot-light]: screenshots/light.png
+[screenshot-dark]: screenshots/dark-example.png
+[screenshot-light]: screenshots/light-example.png
 
 
 ### Origins:

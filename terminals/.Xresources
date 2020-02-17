@@ -1,0 +1,19 @@
+XTerm*background: #333333
+XTerm*foreground: #ffffff
+XTerm*color0:     #202020
+XTerm*color1:     #f58c84
+XTerm*color2:     #a5d75a
+XTerm*color3:     #fadf78
+XTerm*color4:     #78bcfb
+XTerm*color5:     #c9a2f4
+XTerm*color6:     #5e9df2
+XTerm*color7:     #e4e4e4
+XTerm*color8:     #565656
+XTerm*color9:     #ef8171
+XTerm*color10:    #d6fb8b
+XTerm*color11:    #fcf19c
+XTerm*color12:    #9ad7fc
+XTerm*color13:    #e1c8f8
+XTerm*color14:    #4e8de2
+XTerm*color15:    #ffffff
+

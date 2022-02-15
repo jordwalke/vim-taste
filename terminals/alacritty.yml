@@ -1,0 +1,32 @@
+# Colors (vim-taste)
+colors:
+  # Default colors
+  primary:
+    background: '0x303030'
+    foreground: '0xd4d4d4'
+
+  # Normal colors
+  normal:
+    black:   '0x202020'
+    red:     '0xf58c84'
+    green:   '0xa5d75a'
+    yellow:  '0xfadf78'
+    blue:    '0x78bcfb'
+    magenta: '0xc9a2f4'
+    cyan:    '0x5e9df2'
+    white:   '0xe4e4e4'
+
+  # Bright colors
+  bright:
+    black:   '0x565656'
+    red:     '0xe25256'
+    green:   '0xd6fb8b'
+    yellow:  '0xfcf19c'
+    blue:    '0x9ad7fc'
+    magenta: '0xe1c8f8'
+    cyan:    '0x4e8de2'
+    white:   '0xffffff'
+
+  selection:
+    text: '0xd4d4d4'
+    background: '0x464646'
